@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/nightly/aspnet:8.0-alpine3.19 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.19 AS base
 
 ENV DOTNET_JitNoMemoryBarriers=1 \
     DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP3SUPPORT=1 \
