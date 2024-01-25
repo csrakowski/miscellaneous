@@ -7,7 +7,7 @@ ENV DOTNET_JitNoMemoryBarriers=1 \
 # Already part of the base image, but good to keep in mind in case we change that later on
 #ENV DOTNET_RUNNING_IN_CONTAINER=true
 
-RUN apk update --no-cache \
+RUN apk update --no-cache && \
     apk upgrade --no-cache
 
 RUN apk add --upgrade --no-cache \
