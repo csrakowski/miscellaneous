@@ -1,5 +1,13 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.19 AS base
 
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.19" \
+      org.opencontainers.image.vendor="csrakowski" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.title="aspnet" \
+      org.opencontainers.image.description="Based on the dotnet/aspnet base image, with ICU packages added." \
+      org.opencontainers.image.ref.name="8.0-alpine3.19" \
+      org.opencontainers.image.version="8.0.2"
+
 ENV DOTNET_JitNoMemoryBarriers=1 \
     DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP3SUPPORT=1 \
     DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
