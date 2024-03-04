@@ -1,0 +1,68 @@
+[user]
+	name = Christiaan Rakowski
+	email = cs.rakowski@gmail.com
+	signingkey = CF6C036AD59BBF49
+[core]
+	autocrlf = false
+;	longpaths = true
+	sshCommand = C:/WINDOWS/System32/OpenSSH/ssh.exe
+;[branch]
+;	autosetuprebase = always
+[push]
+	default = simple
+	autoSetupRemote = true
+[commit]
+	gpgsign = false
+[gpg]
+	program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
+[alias]
+	hist = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr [%ad]) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+;	hist-plain = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short
+;	hist-sven = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	find = log --pretty=\"format:%Cblue%H %Cgreen%s%Creset\" --abbrev-commit --grep
+	merge-no-ff = merge --no-ff
+	co = checkout
+	cob = checkout -b
+	amend = commit --amend
+	pull-r = pull --rebase
+	cp = cherry-pick
+	cpm = cherry-pick --no-commit
+	wip = commit -am "~ WIP - DO NOT MERGE! ~"
+	call = commit -A
+	cam = commit -am
+	cm = commit -m
+	all = add -A
+	fetch-all = fetch --prune --all --tags
+	authors = log --format='%aN' | sort -u
+;	yolo = commit -m "$(curl -s http://whatthecommit.com/index.txt)"
+[diff]
+	tool = vsdiffmerge
+[difftool]
+	prompt = true
+	keepbackup = false
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vsdiffmerge
+[mergetool]
+	prompt = true
+	keepbackup = false
+[mergetool "vsdiffmerge"]
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+	trustExitCode = true
+	keepBackup = false
+[mergetool "vscode"]
+	cmd = code --wait --merge $LOCAL $REMOTE
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
