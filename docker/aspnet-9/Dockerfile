@@ -1,12 +1,12 @@
-FROM mcr.microsoft.com/dotnet/aspnet:9.0-preview-alpine AS base
+FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS base
 
-LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:9.0-preview-alpine" \
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:9.0-alpine" \
       org.opencontainers.image.vendor="csrakowski" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.title="aspnet" \
       org.opencontainers.image.description="Based on the dotnet/aspnet base image, with ICU packages added." \
-      org.opencontainers.image.ref.name="9.0-preview-alpine" \
-      org.opencontainers.image.version="9.0.0-preview.5"
+      org.opencontainers.image.ref.name="9.0-alpine" \
+      org.opencontainers.image.version="9.0.0-rc.2"
 
 ENV DOTNET_JitNoMemoryBarriers=1 \
     DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP3SUPPORT=1 \
