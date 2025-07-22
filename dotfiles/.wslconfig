@@ -9,5 +9,5 @@ processors=4
 
 # Enable experiemntal features
 [experimental]
-sparseVhd=true
+#sparseVhd=true
 autoMemoryReclaim=dropcache
