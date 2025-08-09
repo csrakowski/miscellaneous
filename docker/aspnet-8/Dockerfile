@@ -16,9 +16,8 @@ ENV DOTNET_JitNoMemoryBarriers=1 \
 #ENV DOTNET_RUNNING_IN_CONTAINER=true
 
 RUN apk update && \
-    apk upgrade
-
-RUN apk add --upgrade \
+    apk upgrade && \
+    apk add --upgrade \
     icu-data-full \
     icu-libs \
     tzdata && \
