@@ -14,4 +14,4 @@ RUN apk update && \
     apk add postgresql-client curl && \
     rm -rf /var/cache//*
 
-CMD [ "" ]
+CMD [ "/bin/ash" ]

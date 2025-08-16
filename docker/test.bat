@@ -8,4 +8,5 @@ docker run -it --rm csrakowski/aspnet:9-alpine-dev /bin/ash
 
 REM Preview Postgres CLI
 docker build .\postgres-cli\ --no-cache --file .\postgres-cli\Dockerfile -t csrakowski/postgres-cli:dev
-docker run -it --rm csrakowski/postgres-cli:dev /bin/ash
+docker run -it --rm csrakowski/postgres-cli:dev pg_dump  -h postgres.imedia -p 31582 -U postgres
+docker run -it --rm csrakowski/postgres-cli:dev
