@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:9.0-al
       org.opencontainers.image.title="aspnet" \
       org.opencontainers.image.description="Based on the dotnet/aspnet base image, with ICU packages added." \
       org.opencontainers.image.ref.name="9.0-alpine" \
-      org.opencontainers.image.version="9.0.8"
+      org.opencontainers.image.version="9.0.9"
 
 ENV DOTNET_JitNoMemoryBarriers=1 \
     DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP3SUPPORT=1 \
