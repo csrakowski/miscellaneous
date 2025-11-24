@@ -1,0 +1,71 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build-aspnet-10:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/docker-login
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for ASP.NET 10
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --provenance=true --sbom=true --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:10-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:10-alpine .\aspnet-10\
+
+  build-aspnet-9:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/docker-login
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for ASP.NET 9
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --provenance=true --sbom=true --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:9-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:9-alpine .\aspnet-9\
+
+  build-aspnet-8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/docker-login
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for ASP.NET 8
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --provenance=true --sbom=true --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine .\aspnet-8\
+
+  build-postgres-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/docker-login
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for Postgres CLI
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --provenance=true --sbom=true --push -t ${{ env.REGISTRY }}/csrakowski/postgres-cli:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/postgres-cli:latest .\postgres-cli\
+
+  build-bitbucket-pipeline-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/docker-login
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for Bitbucket Pipeline Runner
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --provenance=true --sbom=true --push -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:latest .\bitbucket-pipeline-runner\
