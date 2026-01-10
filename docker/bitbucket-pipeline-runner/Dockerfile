@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine3.22
+FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine3.23
 ARG BUILD_CONFIGURATION=Release
 
 # Labels
-LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:9.0-alpine3.22" \
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:9.0-alpine3.23" \
       org.opencontainers.image.vendor="csrakowski" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.authors="Christiaan Rakowski <cs.rakowski@gmail.com>" \
