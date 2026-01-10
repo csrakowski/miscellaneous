@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.22 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.23 AS base
 
-LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.22" \
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.23" \
       org.opencontainers.image.vendor="csrakowski" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.authors="Christiaan Rakowski <cs.rakowski@gmail.com>" \
