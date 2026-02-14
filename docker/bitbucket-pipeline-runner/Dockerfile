@@ -1,15 +1,15 @@
-FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine3.23
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine3.23
 ARG BUILD_CONFIGURATION=Release
 
 # Labels
-LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:9.0-alpine3.23" \
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:10.0-alpine3.23" \
       org.opencontainers.image.vendor="csrakowski" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.authors="Christiaan Rakowski <cs.rakowski@gmail.com>" \
       org.opencontainers.image.title="Bitbucket Pipeline Runner" \
       org.opencontainers.image.description="Helper image for BitBucket Pipelines that use Dotnet SDK and Docker" \
-      org.opencontainers.image.ref.name="9.0-alpine" \
-      org.opencontainers.image.version="9.0.308"
+      org.opencontainers.image.ref.name="10.0-alpine" \
+      org.opencontainers.image.version="10.0.103"
 
 # Install base dependencies
 RUN apk update && \
