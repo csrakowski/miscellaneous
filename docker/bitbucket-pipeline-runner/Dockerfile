@@ -22,7 +22,13 @@ RUN apk update && \
         docker-cli-compose \
         docker-credential-ecr-login \
         ca-certificates && \
+    update-ca-certificates && \
     rm -rf /var/cache//*
+
+RUN dotnet tool install --global dotnet-reportgenerator-globaltool
+
+RUN export PATH="$PATH:/root/.dotnet/tools" \
+    && export TESTCONTAINERS_RYUK_DISABLED=true
 
 SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 

@@ -19,7 +19,10 @@ ENV DOTNET_JitNoMemoryBarriers=1 \
 RUN apk update && \
     apk upgrade && \
     apk add --upgrade \
-    icu-data-full \
-    icu-libs \
-    tzdata && \
+        icu-data-full \
+        icu-libs \
+        tzdata \
+        curl \
+        ca-certificates && \
+    update-ca-certificates && \
     rm -rf /var/cache//*

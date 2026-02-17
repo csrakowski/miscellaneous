@@ -15,7 +15,9 @@ RUN apk update && \
     apk add --upgrade \
         postgresql-client \
         wget \
-        curl && \
+        curl \
+        ca-certificates && \
+    update-ca-certificates && \
     rm -rf /var/cache//*
 
 CMD [ "/bin/ash" ]
