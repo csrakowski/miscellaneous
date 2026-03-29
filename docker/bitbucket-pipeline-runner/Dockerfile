@@ -9,7 +9,7 @@ LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:10.0-alpi
       org.opencontainers.image.title="Bitbucket Pipeline Runner" \
       org.opencontainers.image.description="Helper image for BitBucket Pipelines that use Dotnet SDK and Docker" \
       org.opencontainers.image.ref.name="10.0-alpine" \
-      org.opencontainers.image.version="10.0.103"
+      org.opencontainers.image.version="10.0.201"
 
 # Install base dependencies
 RUN apk update && \
