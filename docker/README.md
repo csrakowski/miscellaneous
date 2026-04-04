@@ -12,6 +12,16 @@ docker pull csrakowski/aspnet:10-alpine
 ```
 
 
+# csrakowski/python
+Based on the [python:3-alpine](https://hub.docker.com/_/python) base image, with the UV package manager pre-installed.
+
+Available to pull from Docker Hub [csrakowski/python](https://hub.docker.com/r/csrakowski/python)
+
+```shell
+docker pull csrakowski/python:latest
+```
+
+
 
 # csrakowski/postgres-cli
 Simple helper container for PostgreSQL management.
