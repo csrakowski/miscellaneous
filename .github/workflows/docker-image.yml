@@ -84,3 +84,18 @@ jobs:
 
       - name: Build the Docker image for Bitbucket Pipeline Runner
         run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:latest ./bitbucket-pipeline-runner/
+
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Docker image for Python
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/python:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/python:latest ./python/

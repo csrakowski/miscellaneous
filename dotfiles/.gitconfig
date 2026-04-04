@@ -41,7 +41,7 @@
 	prompt = true
 	keepbackup = false
 [difftool "vsdiffmerge"]
-	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2026\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
 [difftool "vscode"]
     cmd = code --wait --diff $LOCAL $REMOTE
 [merge]
@@ -50,7 +50,7 @@
 	prompt = true
 	keepbackup = false
 [mergetool "vsdiffmerge"]
-	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+	cmd = \"C:\\Program Files\\Microsoft Visual Studio\\2026\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
 	trustExitCode = true
 	keepBackup = false
 [mergetool "vscode"]
@@ -66,3 +66,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 
+[safe]
+	bareRepository = explicit
