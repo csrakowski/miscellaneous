@@ -71,7 +71,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for ASP.NET 8
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine ./docker/aspnet-8/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine ./docker/aspnet/8/
 
   build-postgres-cli:
     runs-on: ubuntu-latest
