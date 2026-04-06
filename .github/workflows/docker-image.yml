@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for ASP.NET 10
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:10-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:10-alpine ./docker/aspnet-10/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:10-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:10-alpine ./docker/aspnet/10/
 
   build-aspnet-9:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for ASP.NET 9
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:9-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:9-alpine ./docker/aspnet-9/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:9-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:9-alpine ./docker/aspnet/9/
 
   build-aspnet-8:
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for ASP.NET 8
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/aspnet:8-alpine ./docker/aspnet-8/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:8-alpine-$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/aspnet:8-alpine ./docker/aspnet/8/
 
   build-postgres-cli:
     runs-on: ubuntu-latest
@@ -92,7 +92,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for Postgres CLI
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/postgres-cli:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/postgres-cli:latest ./docker/postgres-cli/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/postgres-cli:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/postgres-cli:latest ./docker/postgres-cli/
 
   build-bitbucket-pipeline-runner:
     runs-on: ubuntu-latest
@@ -113,7 +113,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for Bitbucket Pipeline Runner
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/bitbucket-pipeline-runner:latest ./docker/bitbucket-pipeline-runner/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/bitbucket-pipeline-runner:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/bitbucket-pipeline-runner:latest ./docker/bitbucket-pipeline-runner/
 
   build-python:
     runs-on: ubuntu-latest
@@ -134,4 +134,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image for Python
-        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/python:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/python:latest ./docker/python/
+        run: docker buildx build --platform linux/amd64,linux/arm64 --no-cache --push -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/python:$(date +%s) -t ${{ env.REGISTRY }}/csrakowski/miscellaneous/python:latest ./docker/python/
