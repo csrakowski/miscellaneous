@@ -13,7 +13,7 @@ RUN apk update && \
     apk upgrade && \
     apk add --upgrade ca-certificates && \
     update-ca-certificates && \
-    rm -rf /var/cache//*
+    rm -rf /var/cache/*
 
 # Disable development dependencies
 ENV UV_NO_DEV=1

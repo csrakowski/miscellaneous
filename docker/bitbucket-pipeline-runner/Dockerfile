@@ -9,7 +9,7 @@ LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/sdk:10.0-alpi
       org.opencontainers.image.title="Bitbucket Pipeline Runner" \
       org.opencontainers.image.description="Helper image for BitBucket Pipelines that use Dotnet SDK and Docker" \
       org.opencontainers.image.ref.name="10.0-alpine" \
-      org.opencontainers.image.version="10.0.201"
+      org.opencontainers.image.version="10.0.203"
 
 # Install base dependencies
 RUN apk update && \
@@ -23,7 +23,7 @@ RUN apk update && \
         docker-credential-ecr-login \
         ca-certificates && \
     update-ca-certificates && \
-    rm -rf /var/cache//*
+    rm -rf /var/cache/*
 
 RUN dotnet tool install --global dotnet-reportgenerator-globaltool
 

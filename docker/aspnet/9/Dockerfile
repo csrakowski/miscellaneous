@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:9.0-al
       org.opencontainers.image.title="aspnet" \
       org.opencontainers.image.description="Based on the dotnet/aspnet base image, with ICU packages added." \
       org.opencontainers.image.ref.name="9.0-alpine" \
-      org.opencontainers.image.version="9.0.14"
+      org.opencontainers.image.version="9.0.15"
 
 ENV DOTNET_JitNoMemoryBarriers=1 \
     DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP3SUPPORT=1 \
@@ -25,4 +25,4 @@ RUN apk update && \
         curl \
         ca-certificates && \
     update-ca-certificates && \
-    rm -rf /var/cache//*
+    rm -rf /var/cache/*

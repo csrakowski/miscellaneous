@@ -18,6 +18,6 @@ RUN apk update && \
         curl \
         ca-certificates && \
     update-ca-certificates && \
-    rm -rf /var/cache//*
+    rm -rf /var/cache/*
 
 CMD [ "/bin/ash" ]
