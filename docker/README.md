@@ -48,3 +48,43 @@ This also works great in Kubernetes CronJobs.
 ```shell
 docker run -it --rm csrakowski/postgres-cli:latest pg_dump -h <Hostname> -p <PORT> -U <USER> > dump.sql
 ```
+
+
+
+# csrakowski/bitbucket-pipeline-runner
+Based on the [dotnet/sdk](https://mcr.microsoft.com/en-us/product/dotnet/sdk/about) base image, with `wget`, `aws-cli` and `docker` packages added.
+
+Available to pull from Docker Hub [csrakowski/bitbucket-pipeline-runner](https://hub.docker.com/r/csrakowski/bitbucket-pipeline-runner)
+
+```shell
+docker pull csrakowski/bitbucket-pipeline-runner:latest
+```
+
+## Usages
+
+The image is set up to be drop-in replacement for the [`image`](https://support.atlassian.com/bitbucket-cloud/docs/docker-image-options/#Image) in bitbucket pipelines.
+
+
+You can either set it up at the top level, for all pipeline steps:
+
+```yaml
+image: csrakowski/bitbucket-pipeline-runner:latest
+
+pipelines:
+  default:
+    - step:
+        name: Hello world example
+        script:
+          - echo "Hello, World!"
+```
+
+Or at the individual `step` level:
+```yaml
+pipelines:
+  default:
+    - step:
+        image: csrakowski/bitbucket-pipeline-runner:latest
+        name: Hello world example
+        script:
+          - echo "Hello, World!"
+```
