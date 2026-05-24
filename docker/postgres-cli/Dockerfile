@@ -14,9 +14,9 @@ RUN apk update && \
     apk upgrade && \
     apk add --upgrade \
         postgresql-client \
-        wget \
         ca-certificates && \
-    apk add --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main curl && \
+    apk add --upgrade --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main busybox && \
+    apk add --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main curl wget && \
     update-ca-certificates && \
     rm -rf /var/cache/*
 

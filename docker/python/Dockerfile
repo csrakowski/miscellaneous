@@ -12,6 +12,7 @@ LABEL org.opencontainers.image.base.name="python:3-alpine" \
 RUN apk update && \
     apk upgrade && \
     apk add --upgrade ca-certificates && \
+    apk add --upgrade --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main busybox && \
     update-ca-certificates && \
     rm -rf /var/cache/*
 

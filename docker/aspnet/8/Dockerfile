@@ -23,6 +23,7 @@ RUN apk update && \
         icu-libs \
         tzdata \
         ca-certificates && \
+    apk add --upgrade --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main busybox && \
     apk add --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main curl && \
     update-ca-certificates && \
     rm -rf /var/cache/*
