@@ -1,5 +1,5 @@
 # csrakowski/aspnet
-Based on the [dotnet/aspnet](https://mcr.microsoft.com/en-us/product/dotnet/aspnet/about) base image, with ICU packages added.
+Based on the [dotnet/aspnet:x-alpine](https://mcr.microsoft.com/en-us/product/dotnet/aspnet/about) base image, with ICU packages added.
 
 Because this project is mainly targeted at my own needs, it is only available for Alpine .NET 8 - 10, on AMD64 and ARM64.
 
@@ -13,7 +13,7 @@ docker pull csrakowski/aspnet:10-alpine
 
 
 # csrakowski/python
-Based on the [python:3-alpine](https://hub.docker.com/_/python) base image, with the UV package manager pre-installed.
+Based on the [python:3-alpine and python:3-slim](https://hub.docker.com/_/python) base images, with the UV package manager pre-installed.
 
 Available to pull from Docker Hub [csrakowski/python](https://hub.docker.com/r/csrakowski/python)
 
