@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.24 AS base
 
-LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.23" \
+LABEL org.opencontainers.image.base.name="mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.24" \
       org.opencontainers.image.vendor="csrakowski" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.authors="Christiaan Rakowski <cs.rakowski@gmail.com>" \
@@ -19,8 +19,7 @@ RUN apk update && \
         icu-data-full \
         icu-libs \
         tzdata \
+        curl \
         ca-certificates && \
-    apk add --upgrade --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main busybox && \
-    apk add --no-cache -X https://dl-cdn.alpinelinux.org/alpine/edge/main curl && \
     update-ca-certificates && \
     rm -rf /var/cache/*

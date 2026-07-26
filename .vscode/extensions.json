@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "docker.docker",
+        "ms-azuretools.vscode-containers",
+        "shd101wyy.markdown-preview-enhanced"
+    ]
+}
